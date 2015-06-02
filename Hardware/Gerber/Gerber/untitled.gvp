@@ -1,0 +1,8 @@
+(gerbv-file-version! "2.0A")
+(define-layer! 4 (cons 'filename "40pin_AVRMCU-append-F_SilkS.gto")(cons 'visible #t)(cons 'color #(0 0 0)))
+(define-layer! 3 (cons 'filename "40pin_AVRMCU-append-F_Mask.gts")(cons 'visible #t)(cons 'color #(0 0 0)))
+(define-layer! 2 (cons 'filename "40pin_AVRMCU-append-F_Cu.gtl")(cons 'visible #t)(cons 'color #(0 0 0)))
+(define-layer! 1 (cons 'filename "40pin_AVRMCU-append-B_Mask.gbs")(cons 'visible #t)(cons 'color #(0 0 0)))
+(define-layer! 0 (cons 'filename "40pin_AVRMCU-append-B_Cu.gbl")(cons 'visible #t)(cons 'color #(0 0 0)))
+(define-layer! -1 (cons 'filename "I:/PCB_Designes/Breakouts/40pin_AVRMCU/Gerber/Gerber")(cons 'visible #f)(cons 'color #(65535 65535 65535)))
+(set-render-type! 2)
