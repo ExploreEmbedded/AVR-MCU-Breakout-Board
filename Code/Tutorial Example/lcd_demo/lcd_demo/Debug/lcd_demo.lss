@@ -1,0 +1,1414 @@
+
+lcd_demo.elf:     file format elf32-avr
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .text         000007ce  00000000  00000000  00000094  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  1 .data         00000036  00800060  000007ce  00000862  2**0
+                  CONTENTS, ALLOC, LOAD, DATA
+  2 .bss          00000010  00800096  00800096  00000898  2**0
+                  ALLOC
+  3 .comment      00000030  00000000  00000000  00000898  2**0
+                  CONTENTS, READONLY
+  4 .debug_aranges 00000118  00000000  00000000  000008c8  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  5 .debug_info   000017c7  00000000  00000000  000009e0  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  6 .debug_abbrev 000004f1  00000000  00000000  000021a7  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  7 .debug_line   000005c7  00000000  00000000  00002698  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  8 .debug_frame  0000037c  00000000  00000000  00002c60  2**2
+                  CONTENTS, READONLY, DEBUGGING
+  9 .debug_str    000006a2  00000000  00000000  00002fdc  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 10 .debug_loc    00001446  00000000  00000000  0000367e  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 11 .debug_ranges 000000d8  00000000  00000000  00004ac4  2**0
+                  CONTENTS, READONLY, DEBUGGING
+
+Disassembly of section .text:
+
+00000000 <__vectors>:
+   0:	0c 94 2a 00 	jmp	0x54	; 0x54 <__ctors_end>
+   4:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+   8:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+   c:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  10:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  14:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  18:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  1c:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  20:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  24:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  28:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  2c:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  30:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  34:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  38:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  3c:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  40:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  44:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  48:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  4c:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  50:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+
+00000054 <__ctors_end>:
+  54:	11 24       	eor	r1, r1
+  56:	1f be       	out	0x3f, r1	; 63
+  58:	cf e5       	ldi	r28, 0x5F	; 95
+  5a:	d8 e0       	ldi	r29, 0x08	; 8
+  5c:	de bf       	out	0x3e, r29	; 62
+  5e:	cd bf       	out	0x3d, r28	; 61
+
+00000060 <__do_copy_data>:
+  60:	10 e0       	ldi	r17, 0x00	; 0
+  62:	a0 e6       	ldi	r26, 0x60	; 96
+  64:	b0 e0       	ldi	r27, 0x00	; 0
+  66:	ee ec       	ldi	r30, 0xCE	; 206
+  68:	f7 e0       	ldi	r31, 0x07	; 7
+  6a:	02 c0       	rjmp	.+4      	; 0x70 <__do_copy_data+0x10>
+  6c:	05 90       	lpm	r0, Z+
+  6e:	0d 92       	st	X+, r0
+  70:	a6 39       	cpi	r26, 0x96	; 150
+  72:	b1 07       	cpc	r27, r17
+  74:	d9 f7       	brne	.-10     	; 0x6c <__do_copy_data+0xc>
+
+00000076 <__do_clear_bss>:
+  76:	20 e0       	ldi	r18, 0x00	; 0
+  78:	a6 e9       	ldi	r26, 0x96	; 150
+  7a:	b0 e0       	ldi	r27, 0x00	; 0
+  7c:	01 c0       	rjmp	.+2      	; 0x80 <.do_clear_bss_start>
+
+0000007e <.do_clear_bss_loop>:
+  7e:	1d 92       	st	X+, r1
+
+00000080 <.do_clear_bss_start>:
+  80:	a6 3a       	cpi	r26, 0xA6	; 166
+  82:	b2 07       	cpc	r27, r18
+  84:	e1 f7       	brne	.-8      	; 0x7e <.do_clear_bss_loop>
+  86:	0e 94 b7 03 	call	0x76e	; 0x76e <main>
+  8a:	0c 94 e5 03 	jmp	0x7ca	; 0x7ca <_exit>
+
+0000008e <__bad_interrupt>:
+  8e:	0c 94 00 00 	jmp	0	; 0x0 <__vectors>
+
+00000092 <DELAY_us>:
+         if 5000 is passed as the argument then it generates a delay of 5ms.		  
+
+ ***************************************************************************************************/
+void DELAY_us(uint16_t us_count) 
+{
+    while (us_count != 0) 
+  92:	00 97       	sbiw	r24, 0x00	; 0
+  94:	21 f0       	breq	.+8      	; 0x9e <DELAY_us+0xc>
+	#else
+		//round up by default
+		__ticks_dc = (uint32_t)(ceil(fabs(__tmp)));
+	#endif
+
+	__builtin_avr_delay_cycles(__ticks_dc);
+  96:	00 00       	nop
+    {
+        _delay_us(1);
+		us_count--;
+  98:	01 97       	sbiw	r24, 0x01	; 1
+         if 5000 is passed as the argument then it generates a delay of 5ms.		  
+
+ ***************************************************************************************************/
+void DELAY_us(uint16_t us_count) 
+{
+    while (us_count != 0) 
+  9a:	00 97       	sbiw	r24, 0x00	; 0
+  9c:	e1 f7       	brne	.-8      	; 0x96 <DELAY_us+0x4>
+  9e:	08 95       	ret
+
+000000a0 <DELAY_ms>:
+     It generates a delay of 1ms for each count,
+     if 1000 is passed as the argument then it generates delay of 1000ms(1sec)
+ ***************************************************************************************************/
+void DELAY_ms(uint16_t ms_count) 
+{
+    while (ms_count != 0) 
+  a0:	00 97       	sbiw	r24, 0x00	; 0
+  a2:	49 f0       	breq	.+18     	; 0xb6 <DELAY_ms+0x16>
+  a4:	e9 ef       	ldi	r30, 0xF9	; 249
+  a6:	f0 e0       	ldi	r31, 0x00	; 0
+  a8:	31 97       	sbiw	r30, 0x01	; 1
+  aa:	f1 f7       	brne	.-4      	; 0xa8 <DELAY_ms+0x8>
+  ac:	00 c0       	rjmp	.+0      	; 0xae <DELAY_ms+0xe>
+  ae:	00 00       	nop
+    {
+        _delay_us(1000); //DELAY_us is called to generate 1ms delay
+        ms_count--;
+  b0:	01 97       	sbiw	r24, 0x01	; 1
+     It generates a delay of 1ms for each count,
+     if 1000 is passed as the argument then it generates delay of 1000ms(1sec)
+ ***************************************************************************************************/
+void DELAY_ms(uint16_t ms_count) 
+{
+    while (ms_count != 0) 
+  b2:	00 97       	sbiw	r24, 0x00	; 0
+  b4:	b9 f7       	brne	.-18     	; 0xa4 <DELAY_ms+0x4>
+  b6:	08 95       	ret
+
+000000b8 <GPIO_PinDirection>:
+
+    uint8_t v_portNumber_u8;
+
+
+    v_portNumber_u8 =  (enm_pinNumber>>3);  // Divide the pin number by 8 go get the PORT number
+    enm_pinNumber  =   enm_pinNumber & 0x07;  // lower 3-bits contains the bit number of a byte 
+  b8:	98 2f       	mov	r25, r24
+  ba:	97 70       	andi	r25, 0x07	; 7
+{
+
+    uint8_t v_portNumber_u8;
+
+
+    v_portNumber_u8 =  (enm_pinNumber>>3);  // Divide the pin number by 8 go get the PORT number
+  bc:	86 95       	lsr	r24
+  be:	86 95       	lsr	r24
+  c0:	86 95       	lsr	r24
+    enm_pinNumber  =   enm_pinNumber & 0x07;  // lower 3-bits contains the bit number of a byte 
+
+    /* Go to particular port after decoding from the pin number and 
+        set the direction as specified*/
+    switch(v_portNumber_u8)
+  c2:	81 30       	cpi	r24, 0x01	; 1
+  c4:	21 f1       	breq	.+72     	; 0x10e <GPIO_PinDirection+0x56>
+  c6:	30 f0       	brcs	.+12     	; 0xd4 <GPIO_PinDirection+0x1c>
+  c8:	82 30       	cpi	r24, 0x02	; 2
+  ca:	f1 f1       	breq	.+124    	; 0x148 <GPIO_PinDirection+0x90>
+  cc:	83 30       	cpi	r24, 0x03	; 3
+  ce:	09 f4       	brne	.+2      	; 0xd2 <GPIO_PinDirection+0x1a>
+  d0:	58 c0       	rjmp	.+176    	; 0x182 <GPIO_PinDirection+0xca>
+  d2:	08 95       	ret
+    {
+#ifdef DDRA        
+    case 0:
+        util_UpdateBit(DDRA,enm_pinNumber,v_pinDirn_u8);
+  d4:	66 23       	and	r22, r22
+  d6:	69 f0       	breq	.+26     	; 0xf2 <GPIO_PinDirection+0x3a>
+  d8:	4a b3       	in	r20, 0x1a	; 26
+  da:	21 e0       	ldi	r18, 0x01	; 1
+  dc:	30 e0       	ldi	r19, 0x00	; 0
+  de:	b9 01       	movw	r22, r18
+  e0:	02 c0       	rjmp	.+4      	; 0xe6 <GPIO_PinDirection+0x2e>
+  e2:	66 0f       	add	r22, r22
+  e4:	77 1f       	adc	r23, r23
+  e6:	9a 95       	dec	r25
+  e8:	e2 f7       	brpl	.-8      	; 0xe2 <GPIO_PinDirection+0x2a>
+  ea:	cb 01       	movw	r24, r22
+  ec:	84 2b       	or	r24, r20
+  ee:	8a bb       	out	0x1a, r24	; 26
+  f0:	08 95       	ret
+  f2:	4a b3       	in	r20, 0x1a	; 26
+  f4:	21 e0       	ldi	r18, 0x01	; 1
+  f6:	30 e0       	ldi	r19, 0x00	; 0
+  f8:	b9 01       	movw	r22, r18
+  fa:	02 c0       	rjmp	.+4      	; 0x100 <GPIO_PinDirection+0x48>
+  fc:	66 0f       	add	r22, r22
+  fe:	77 1f       	adc	r23, r23
+ 100:	9a 95       	dec	r25
+ 102:	e2 f7       	brpl	.-8      	; 0xfc <GPIO_PinDirection+0x44>
+ 104:	cb 01       	movw	r24, r22
+ 106:	80 95       	com	r24
+ 108:	84 23       	and	r24, r20
+ 10a:	8a bb       	out	0x1a, r24	; 26
+ 10c:	08 95       	ret
+#endif        
+
+
+#ifdef DDRB
+    case 1:
+        util_UpdateBit(DDRB,enm_pinNumber,v_pinDirn_u8);
+ 10e:	66 23       	and	r22, r22
+ 110:	69 f0       	breq	.+26     	; 0x12c <GPIO_PinDirection+0x74>
+ 112:	47 b3       	in	r20, 0x17	; 23
+ 114:	21 e0       	ldi	r18, 0x01	; 1
+ 116:	30 e0       	ldi	r19, 0x00	; 0
+ 118:	b9 01       	movw	r22, r18
+ 11a:	02 c0       	rjmp	.+4      	; 0x120 <GPIO_PinDirection+0x68>
+ 11c:	66 0f       	add	r22, r22
+ 11e:	77 1f       	adc	r23, r23
+ 120:	9a 95       	dec	r25
+ 122:	e2 f7       	brpl	.-8      	; 0x11c <GPIO_PinDirection+0x64>
+ 124:	cb 01       	movw	r24, r22
+ 126:	84 2b       	or	r24, r20
+ 128:	87 bb       	out	0x17, r24	; 23
+ 12a:	08 95       	ret
+ 12c:	47 b3       	in	r20, 0x17	; 23
+ 12e:	21 e0       	ldi	r18, 0x01	; 1
+ 130:	30 e0       	ldi	r19, 0x00	; 0
+ 132:	b9 01       	movw	r22, r18
+ 134:	02 c0       	rjmp	.+4      	; 0x13a <GPIO_PinDirection+0x82>
+ 136:	66 0f       	add	r22, r22
+ 138:	77 1f       	adc	r23, r23
+ 13a:	9a 95       	dec	r25
+ 13c:	e2 f7       	brpl	.-8      	; 0x136 <GPIO_PinDirection+0x7e>
+ 13e:	cb 01       	movw	r24, r22
+ 140:	80 95       	com	r24
+ 142:	84 23       	and	r24, r20
+ 144:	87 bb       	out	0x17, r24	; 23
+ 146:	08 95       	ret
+#endif 
+
+        
+#ifdef DDRC
+    case 2:
+        util_UpdateBit(DDRC,enm_pinNumber,v_pinDirn_u8);
+ 148:	66 23       	and	r22, r22
+ 14a:	69 f0       	breq	.+26     	; 0x166 <GPIO_PinDirection+0xae>
+ 14c:	44 b3       	in	r20, 0x14	; 20
+ 14e:	21 e0       	ldi	r18, 0x01	; 1
+ 150:	30 e0       	ldi	r19, 0x00	; 0
+ 152:	b9 01       	movw	r22, r18
+ 154:	02 c0       	rjmp	.+4      	; 0x15a <GPIO_PinDirection+0xa2>
+ 156:	66 0f       	add	r22, r22
+ 158:	77 1f       	adc	r23, r23
+ 15a:	9a 95       	dec	r25
+ 15c:	e2 f7       	brpl	.-8      	; 0x156 <GPIO_PinDirection+0x9e>
+ 15e:	cb 01       	movw	r24, r22
+ 160:	84 2b       	or	r24, r20
+ 162:	84 bb       	out	0x14, r24	; 20
+ 164:	08 95       	ret
+ 166:	44 b3       	in	r20, 0x14	; 20
+ 168:	21 e0       	ldi	r18, 0x01	; 1
+ 16a:	30 e0       	ldi	r19, 0x00	; 0
+ 16c:	b9 01       	movw	r22, r18
+ 16e:	02 c0       	rjmp	.+4      	; 0x174 <GPIO_PinDirection+0xbc>
+ 170:	66 0f       	add	r22, r22
+ 172:	77 1f       	adc	r23, r23
+ 174:	9a 95       	dec	r25
+ 176:	e2 f7       	brpl	.-8      	; 0x170 <GPIO_PinDirection+0xb8>
+ 178:	cb 01       	movw	r24, r22
+ 17a:	80 95       	com	r24
+ 17c:	84 23       	and	r24, r20
+ 17e:	84 bb       	out	0x14, r24	; 20
+ 180:	08 95       	ret
+#endif 
+
+        
+#ifdef DDRD        
+    case 3:
+        util_UpdateBit(DDRD,enm_pinNumber,v_pinDirn_u8);
+ 182:	66 23       	and	r22, r22
+ 184:	69 f0       	breq	.+26     	; 0x1a0 <GPIO_PinDirection+0xe8>
+ 186:	41 b3       	in	r20, 0x11	; 17
+ 188:	21 e0       	ldi	r18, 0x01	; 1
+ 18a:	30 e0       	ldi	r19, 0x00	; 0
+ 18c:	b9 01       	movw	r22, r18
+ 18e:	02 c0       	rjmp	.+4      	; 0x194 <GPIO_PinDirection+0xdc>
+ 190:	66 0f       	add	r22, r22
+ 192:	77 1f       	adc	r23, r23
+ 194:	9a 95       	dec	r25
+ 196:	e2 f7       	brpl	.-8      	; 0x190 <GPIO_PinDirection+0xd8>
+ 198:	cb 01       	movw	r24, r22
+ 19a:	84 2b       	or	r24, r20
+ 19c:	81 bb       	out	0x11, r24	; 17
+ 19e:	08 95       	ret
+ 1a0:	41 b3       	in	r20, 0x11	; 17
+ 1a2:	21 e0       	ldi	r18, 0x01	; 1
+ 1a4:	30 e0       	ldi	r19, 0x00	; 0
+ 1a6:	b9 01       	movw	r22, r18
+ 1a8:	02 c0       	rjmp	.+4      	; 0x1ae <GPIO_PinDirection+0xf6>
+ 1aa:	66 0f       	add	r22, r22
+ 1ac:	77 1f       	adc	r23, r23
+ 1ae:	9a 95       	dec	r25
+ 1b0:	e2 f7       	brpl	.-8      	; 0x1aa <GPIO_PinDirection+0xf2>
+ 1b2:	cb 01       	movw	r24, r22
+ 1b4:	80 95       	com	r24
+ 1b6:	84 23       	and	r24, r20
+ 1b8:	81 bb       	out	0x11, r24	; 17
+ 1ba:	08 95       	ret
+
+000001bc <GPIO_PinWrite>:
+
+    uint8_t v_portNumber_u8;
+
+
+    v_portNumber_u8 =  (enm_pinNumber>>3);  // Divide the pin number by 8 go get the PORT number
+    enm_pinNumber  =   enm_pinNumber & 0x07;  // lower 3-bits contains the bit number of a byte 
+ 1bc:	98 2f       	mov	r25, r24
+ 1be:	97 70       	andi	r25, 0x07	; 7
+{
+
+    uint8_t v_portNumber_u8;
+
+
+    v_portNumber_u8 =  (enm_pinNumber>>3);  // Divide the pin number by 8 go get the PORT number
+ 1c0:	86 95       	lsr	r24
+ 1c2:	86 95       	lsr	r24
+ 1c4:	86 95       	lsr	r24
+    enm_pinNumber  =   enm_pinNumber & 0x07;  // lower 3-bits contains the bit number of a byte 
+
+    /* Go to particular port after decoding from the pin number and 
+        update the value of the specified pin*/
+    switch(v_portNumber_u8)
+ 1c6:	81 30       	cpi	r24, 0x01	; 1
+ 1c8:	21 f1       	breq	.+72     	; 0x212 <GPIO_PinWrite+0x56>
+ 1ca:	30 f0       	brcs	.+12     	; 0x1d8 <GPIO_PinWrite+0x1c>
+ 1cc:	82 30       	cpi	r24, 0x02	; 2
+ 1ce:	f1 f1       	breq	.+124    	; 0x24c <GPIO_PinWrite+0x90>
+ 1d0:	83 30       	cpi	r24, 0x03	; 3
+ 1d2:	09 f4       	brne	.+2      	; 0x1d6 <GPIO_PinWrite+0x1a>
+ 1d4:	58 c0       	rjmp	.+176    	; 0x286 <GPIO_PinWrite+0xca>
+ 1d6:	08 95       	ret
+    {
+#ifdef PORTA        
+    case 0:
+        util_UpdateBit(PORTA,enm_pinNumber,v_pinValue_u8);
+ 1d8:	66 23       	and	r22, r22
+ 1da:	69 f0       	breq	.+26     	; 0x1f6 <GPIO_PinWrite+0x3a>
+ 1dc:	4b b3       	in	r20, 0x1b	; 27
+ 1de:	21 e0       	ldi	r18, 0x01	; 1
+ 1e0:	30 e0       	ldi	r19, 0x00	; 0
+ 1e2:	b9 01       	movw	r22, r18
+ 1e4:	02 c0       	rjmp	.+4      	; 0x1ea <GPIO_PinWrite+0x2e>
+ 1e6:	66 0f       	add	r22, r22
+ 1e8:	77 1f       	adc	r23, r23
+ 1ea:	9a 95       	dec	r25
+ 1ec:	e2 f7       	brpl	.-8      	; 0x1e6 <GPIO_PinWrite+0x2a>
+ 1ee:	cb 01       	movw	r24, r22
+ 1f0:	84 2b       	or	r24, r20
+ 1f2:	8b bb       	out	0x1b, r24	; 27
+ 1f4:	08 95       	ret
+ 1f6:	4b b3       	in	r20, 0x1b	; 27
+ 1f8:	21 e0       	ldi	r18, 0x01	; 1
+ 1fa:	30 e0       	ldi	r19, 0x00	; 0
+ 1fc:	b9 01       	movw	r22, r18
+ 1fe:	02 c0       	rjmp	.+4      	; 0x204 <GPIO_PinWrite+0x48>
+ 200:	66 0f       	add	r22, r22
+ 202:	77 1f       	adc	r23, r23
+ 204:	9a 95       	dec	r25
+ 206:	e2 f7       	brpl	.-8      	; 0x200 <GPIO_PinWrite+0x44>
+ 208:	cb 01       	movw	r24, r22
+ 20a:	80 95       	com	r24
+ 20c:	84 23       	and	r24, r20
+ 20e:	8b bb       	out	0x1b, r24	; 27
+ 210:	08 95       	ret
+#endif        
+
+        
+#ifdef PORTB
+    case 1:
+        util_UpdateBit(PORTB,enm_pinNumber,v_pinValue_u8);
+ 212:	66 23       	and	r22, r22
+ 214:	69 f0       	breq	.+26     	; 0x230 <GPIO_PinWrite+0x74>
+ 216:	48 b3       	in	r20, 0x18	; 24
+ 218:	21 e0       	ldi	r18, 0x01	; 1
+ 21a:	30 e0       	ldi	r19, 0x00	; 0
+ 21c:	b9 01       	movw	r22, r18
+ 21e:	02 c0       	rjmp	.+4      	; 0x224 <GPIO_PinWrite+0x68>
+ 220:	66 0f       	add	r22, r22
+ 222:	77 1f       	adc	r23, r23
+ 224:	9a 95       	dec	r25
+ 226:	e2 f7       	brpl	.-8      	; 0x220 <GPIO_PinWrite+0x64>
+ 228:	cb 01       	movw	r24, r22
+ 22a:	84 2b       	or	r24, r20
+ 22c:	88 bb       	out	0x18, r24	; 24
+ 22e:	08 95       	ret
+ 230:	48 b3       	in	r20, 0x18	; 24
+ 232:	21 e0       	ldi	r18, 0x01	; 1
+ 234:	30 e0       	ldi	r19, 0x00	; 0
+ 236:	b9 01       	movw	r22, r18
+ 238:	02 c0       	rjmp	.+4      	; 0x23e <GPIO_PinWrite+0x82>
+ 23a:	66 0f       	add	r22, r22
+ 23c:	77 1f       	adc	r23, r23
+ 23e:	9a 95       	dec	r25
+ 240:	e2 f7       	brpl	.-8      	; 0x23a <GPIO_PinWrite+0x7e>
+ 242:	cb 01       	movw	r24, r22
+ 244:	80 95       	com	r24
+ 246:	84 23       	and	r24, r20
+ 248:	88 bb       	out	0x18, r24	; 24
+ 24a:	08 95       	ret
+#endif        
+
+        
+#ifdef PORTC        
+    case 2:
+        util_UpdateBit(PORTC,enm_pinNumber,v_pinValue_u8);
+ 24c:	66 23       	and	r22, r22
+ 24e:	69 f0       	breq	.+26     	; 0x26a <GPIO_PinWrite+0xae>
+ 250:	45 b3       	in	r20, 0x15	; 21
+ 252:	21 e0       	ldi	r18, 0x01	; 1
+ 254:	30 e0       	ldi	r19, 0x00	; 0
+ 256:	b9 01       	movw	r22, r18
+ 258:	02 c0       	rjmp	.+4      	; 0x25e <GPIO_PinWrite+0xa2>
+ 25a:	66 0f       	add	r22, r22
+ 25c:	77 1f       	adc	r23, r23
+ 25e:	9a 95       	dec	r25
+ 260:	e2 f7       	brpl	.-8      	; 0x25a <GPIO_PinWrite+0x9e>
+ 262:	cb 01       	movw	r24, r22
+ 264:	84 2b       	or	r24, r20
+ 266:	85 bb       	out	0x15, r24	; 21
+ 268:	08 95       	ret
+ 26a:	45 b3       	in	r20, 0x15	; 21
+ 26c:	21 e0       	ldi	r18, 0x01	; 1
+ 26e:	30 e0       	ldi	r19, 0x00	; 0
+ 270:	b9 01       	movw	r22, r18
+ 272:	02 c0       	rjmp	.+4      	; 0x278 <GPIO_PinWrite+0xbc>
+ 274:	66 0f       	add	r22, r22
+ 276:	77 1f       	adc	r23, r23
+ 278:	9a 95       	dec	r25
+ 27a:	e2 f7       	brpl	.-8      	; 0x274 <GPIO_PinWrite+0xb8>
+ 27c:	cb 01       	movw	r24, r22
+ 27e:	80 95       	com	r24
+ 280:	84 23       	and	r24, r20
+ 282:	85 bb       	out	0x15, r24	; 21
+ 284:	08 95       	ret
+#endif        
+
+        
+#ifdef PORTD        
+    case 3:
+        util_UpdateBit(PORTD,enm_pinNumber,v_pinValue_u8);
+ 286:	66 23       	and	r22, r22
+ 288:	69 f0       	breq	.+26     	; 0x2a4 <GPIO_PinWrite+0xe8>
+ 28a:	42 b3       	in	r20, 0x12	; 18
+ 28c:	21 e0       	ldi	r18, 0x01	; 1
+ 28e:	30 e0       	ldi	r19, 0x00	; 0
+ 290:	b9 01       	movw	r22, r18
+ 292:	02 c0       	rjmp	.+4      	; 0x298 <GPIO_PinWrite+0xdc>
+ 294:	66 0f       	add	r22, r22
+ 296:	77 1f       	adc	r23, r23
+ 298:	9a 95       	dec	r25
+ 29a:	e2 f7       	brpl	.-8      	; 0x294 <GPIO_PinWrite+0xd8>
+ 29c:	cb 01       	movw	r24, r22
+ 29e:	84 2b       	or	r24, r20
+ 2a0:	82 bb       	out	0x12, r24	; 18
+ 2a2:	08 95       	ret
+ 2a4:	42 b3       	in	r20, 0x12	; 18
+ 2a6:	21 e0       	ldi	r18, 0x01	; 1
+ 2a8:	30 e0       	ldi	r19, 0x00	; 0
+ 2aa:	b9 01       	movw	r22, r18
+ 2ac:	02 c0       	rjmp	.+4      	; 0x2b2 <GPIO_PinWrite+0xf6>
+ 2ae:	66 0f       	add	r22, r22
+ 2b0:	77 1f       	adc	r23, r23
+ 2b2:	9a 95       	dec	r25
+ 2b4:	e2 f7       	brpl	.-8      	; 0x2ae <GPIO_PinWrite+0xf2>
+ 2b6:	cb 01       	movw	r24, r22
+ 2b8:	80 95       	com	r24
+ 2ba:	84 23       	and	r24, r20
+ 2bc:	82 bb       	out	0x12, r24	; 18
+ 2be:	08 95       	ret
+
+000002c0 <GPIO_PinRead>:
+{
+    uint8_t v_portNumber_u8;
+    uint8_t returnStatus = 0;
+
+    v_portNumber_u8 =  (enm_pinNumber>>3); // Divide the pin number by 8 go get the PORT number
+    enm_pinNumber  =     enm_pinNumber & 0x07; // lower 3-bits contains the bit number of a byte 
+ 2c0:	98 2f       	mov	r25, r24
+ 2c2:	97 70       	andi	r25, 0x07	; 7
+uint8_t GPIO_PinRead(gpioPins_et enm_pinNumber)
+{
+    uint8_t v_portNumber_u8;
+    uint8_t returnStatus = 0;
+
+    v_portNumber_u8 =  (enm_pinNumber>>3); // Divide the pin number by 8 go get the PORT number
+ 2c4:	86 95       	lsr	r24
+ 2c6:	86 95       	lsr	r24
+ 2c8:	86 95       	lsr	r24
+    enm_pinNumber  =     enm_pinNumber & 0x07; // lower 3-bits contains the bit number of a byte 
+
+    /* Go to particular port after decoding from the pin number and read the pins status */
+    switch(v_portNumber_u8)     
+ 2ca:	81 30       	cpi	r24, 0x01	; 1
+ 2cc:	89 f0       	breq	.+34     	; 0x2f0 <GPIO_PinRead+0x30>
+ 2ce:	28 f0       	brcs	.+10     	; 0x2da <GPIO_PinRead+0x1a>
+ 2d0:	82 30       	cpi	r24, 0x02	; 2
+ 2d2:	c9 f0       	breq	.+50     	; 0x306 <GPIO_PinRead+0x46>
+ 2d4:	83 30       	cpi	r24, 0x03	; 3
+ 2d6:	11 f1       	breq	.+68     	; 0x31c <GPIO_PinRead+0x5c>
+ 2d8:	2c c0       	rjmp	.+88     	; 0x332 <GPIO_PinRead+0x72>
+    { 
+#ifdef PINA    
+    case 0: 
+        returnStatus = util_IsBitSet(PINA,enm_pinNumber);
+ 2da:	29 b3       	in	r18, 0x19	; 25
+ 2dc:	30 e0       	ldi	r19, 0x00	; 0
+ 2de:	a9 01       	movw	r20, r18
+ 2e0:	02 c0       	rjmp	.+4      	; 0x2e6 <GPIO_PinRead+0x26>
+ 2e2:	55 95       	asr	r21
+ 2e4:	47 95       	ror	r20
+ 2e6:	9a 95       	dec	r25
+ 2e8:	e2 f7       	brpl	.-8      	; 0x2e2 <GPIO_PinRead+0x22>
+ 2ea:	ca 01       	movw	r24, r20
+ 2ec:	81 70       	andi	r24, 0x01	; 1
+        break;
+ 2ee:	08 95       	ret
+#endif        
+
+#ifdef PINB
+    case 1:
+        returnStatus = util_IsBitSet(PINB,enm_pinNumber);
+ 2f0:	26 b3       	in	r18, 0x16	; 22
+ 2f2:	30 e0       	ldi	r19, 0x00	; 0
+ 2f4:	a9 01       	movw	r20, r18
+ 2f6:	02 c0       	rjmp	.+4      	; 0x2fc <GPIO_PinRead+0x3c>
+ 2f8:	55 95       	asr	r21
+ 2fa:	47 95       	ror	r20
+ 2fc:	9a 95       	dec	r25
+ 2fe:	e2 f7       	brpl	.-8      	; 0x2f8 <GPIO_PinRead+0x38>
+ 300:	ca 01       	movw	r24, r20
+ 302:	81 70       	andi	r24, 0x01	; 1
+        break;
+ 304:	08 95       	ret
+#endif          
+
+#ifdef PINC
+    case 2:
+        returnStatus = util_IsBitSet(PINC,enm_pinNumber);
+ 306:	23 b3       	in	r18, 0x13	; 19
+ 308:	30 e0       	ldi	r19, 0x00	; 0
+ 30a:	a9 01       	movw	r20, r18
+ 30c:	02 c0       	rjmp	.+4      	; 0x312 <GPIO_PinRead+0x52>
+ 30e:	55 95       	asr	r21
+ 310:	47 95       	ror	r20
+ 312:	9a 95       	dec	r25
+ 314:	e2 f7       	brpl	.-8      	; 0x30e <GPIO_PinRead+0x4e>
+ 316:	ca 01       	movw	r24, r20
+ 318:	81 70       	andi	r24, 0x01	; 1
+        break;
+ 31a:	08 95       	ret
+#endif        
+        
+        
+#ifdef PIND
+    case 3:
+        returnStatus = util_IsBitSet(PIND,enm_pinNumber);
+ 31c:	20 b3       	in	r18, 0x10	; 16
+ 31e:	30 e0       	ldi	r19, 0x00	; 0
+ 320:	a9 01       	movw	r20, r18
+ 322:	02 c0       	rjmp	.+4      	; 0x328 <GPIO_PinRead+0x68>
+ 324:	55 95       	asr	r21
+ 326:	47 95       	ror	r20
+ 328:	9a 95       	dec	r25
+ 32a:	e2 f7       	brpl	.-8      	; 0x324 <GPIO_PinRead+0x64>
+ 32c:	ca 01       	movw	r24, r20
+ 32e:	81 70       	andi	r24, 0x01	; 1
+        break;
+ 330:	08 95       	ret
+                Before reading the pins status, the pin should be configured as INPUT 
+ ***************************************************************************************************/
+uint8_t GPIO_PinRead(gpioPins_et enm_pinNumber)
+{
+    uint8_t v_portNumber_u8;
+    uint8_t returnStatus = 0;
+ 332:	80 e0       	ldi	r24, 0x00	; 0
+        returnStatus = util_IsBitSet(PING,enm_pinNumber);
+        break;
+#endif             
+    }                         
+    return returnStatus;
+}
+ 334:	08 95       	ret
+
+00000336 <lcd_SendHigherNibble>:
+ * Return value    : none
+
+ * description : This functions is used to send the higher nibble of the data to LCD in 4-bit mode
+**************************************************************************************************/
+static void lcd_SendHigherNibble(uint8_t dataByte)
+{
+ 336:	cf 93       	push	r28
+ 338:	c8 2f       	mov	r28, r24
+    GPIO_PinWrite(LCDConfig.D4,util_IsBitSet(dataByte,4));
+ 33a:	84 fb       	bst	r24, 4
+ 33c:	66 27       	eor	r22, r22
+ 33e:	60 f9       	bld	r22, 0
+ 340:	80 91 a0 00 	lds	r24, 0x00A0
+ 344:	0e 94 de 00 	call	0x1bc	; 0x1bc <GPIO_PinWrite>
+    GPIO_PinWrite(LCDConfig.D5,util_IsBitSet(dataByte,5));
+ 348:	c5 fb       	bst	r28, 5
+ 34a:	66 27       	eor	r22, r22
+ 34c:	60 f9       	bld	r22, 0
+ 34e:	80 91 a1 00 	lds	r24, 0x00A1
+ 352:	0e 94 de 00 	call	0x1bc	; 0x1bc <GPIO_PinWrite>
+    GPIO_PinWrite(LCDConfig.D6,util_IsBitSet(dataByte,6));
+ 356:	c6 fb       	bst	r28, 6
+ 358:	66 27       	eor	r22, r22
+ 35a:	60 f9       	bld	r22, 0
+ 35c:	80 91 a2 00 	lds	r24, 0x00A2
+ 360:	0e 94 de 00 	call	0x1bc	; 0x1bc <GPIO_PinWrite>
+    GPIO_PinWrite(LCDConfig.D7,util_IsBitSet(dataByte,7));
+ 364:	6c 2f       	mov	r22, r28
+ 366:	66 1f       	adc	r22, r22
+ 368:	66 27       	eor	r22, r22
+ 36a:	66 1f       	adc	r22, r22
+ 36c:	80 91 a3 00 	lds	r24, 0x00A3
+ 370:	0e 94 de 00 	call	0x1bc	; 0x1bc <GPIO_PinWrite>
+}
+ 374:	cf 91       	pop	r28
+ 376:	08 95       	ret
+
+00000378 <lcd_SendCmdSignals>:
+ * Return value    : none
+
+ * description : This functions generates the signals for sending the v_lcdCmd_u8 to LCD
+**************************************************************************************************/
+static void lcd_SendCmdSignals(void)
+{
+ 378:	cf 93       	push	r28
+ 37a:	df 93       	push	r29
+     GPIO_PinWrite(LCDConfig.RS,0);
+ 37c:	60 e0       	ldi	r22, 0x00	; 0
+ 37e:	80 91 99 00 	lds	r24, 0x0099
+ 382:	0e 94 de 00 	call	0x1bc	; 0x1bc <GPIO_PinWrite>
+     GPIO_PinWrite(LCDConfig.RW,0);
+ 386:	60 e0       	ldi	r22, 0x00	; 0
+ 388:	80 91 9a 00 	lds	r24, 0x009A
+ 38c:	0e 94 de 00 	call	0x1bc	; 0x1bc <GPIO_PinWrite>
+     GPIO_PinWrite(LCDConfig.EN,1);
+ 390:	cb e9       	ldi	r28, 0x9B	; 155
+ 392:	d0 e0       	ldi	r29, 0x00	; 0
+ 394:	61 e0       	ldi	r22, 0x01	; 1
+ 396:	88 81       	ld	r24, Y
+ 398:	0e 94 de 00 	call	0x1bc	; 0x1bc <GPIO_PinWrite>
+     DELAY_us(10);
+ 39c:	8a e0       	ldi	r24, 0x0A	; 10
+ 39e:	90 e0       	ldi	r25, 0x00	; 0
+ 3a0:	0e 94 49 00 	call	0x92	; 0x92 <DELAY_us>
+     GPIO_PinWrite(LCDConfig.EN,0);
+ 3a4:	60 e0       	ldi	r22, 0x00	; 0
+ 3a6:	88 81       	ld	r24, Y
+ 3a8:	0e 94 de 00 	call	0x1bc	; 0x1bc <GPIO_PinWrite>
+  
+}
+ 3ac:	df 91       	pop	r29
+ 3ae:	cf 91       	pop	r28
+ 3b0:	08 95       	ret
+
+000003b2 <lcd_SendLowerNibble>:
+ * Return value    : none
+
+ * description : This functions is used to send the lower nibble of the data to LCD
+**************************************************************************************************/
+static void lcd_SendLowerNibble(uint8_t dataByte)
+{
+ 3b2:	cf 93       	push	r28
+ 3b4:	c8 2f       	mov	r28, r24
+    GPIO_PinWrite(LCDConfig.D0,util_IsBitSet(dataByte,0));
+ 3b6:	68 2f       	mov	r22, r24
+ 3b8:	61 70       	andi	r22, 0x01	; 1
+ 3ba:	80 91 9c 00 	lds	r24, 0x009C
+ 3be:	0e 94 de 00 	call	0x1bc	; 0x1bc <GPIO_PinWrite>
+    GPIO_PinWrite(LCDConfig.D1,util_IsBitSet(dataByte,1));
+ 3c2:	c1 fb       	bst	r28, 1
+ 3c4:	66 27       	eor	r22, r22
+ 3c6:	60 f9       	bld	r22, 0
+ 3c8:	80 91 9d 00 	lds	r24, 0x009D
+ 3cc:	0e 94 de 00 	call	0x1bc	; 0x1bc <GPIO_PinWrite>
+    GPIO_PinWrite(LCDConfig.D2,util_IsBitSet(dataByte,2));
+ 3d0:	c2 fb       	bst	r28, 2
+ 3d2:	66 27       	eor	r22, r22
+ 3d4:	60 f9       	bld	r22, 0
+ 3d6:	80 91 9e 00 	lds	r24, 0x009E
+ 3da:	0e 94 de 00 	call	0x1bc	; 0x1bc <GPIO_PinWrite>
+    GPIO_PinWrite(LCDConfig.D3,util_IsBitSet(dataByte,3));
+ 3de:	c3 fb       	bst	r28, 3
+ 3e0:	66 27       	eor	r22, r22
+ 3e2:	60 f9       	bld	r22, 0
+ 3e4:	80 91 9f 00 	lds	r24, 0x009F
+ 3e8:	0e 94 de 00 	call	0x1bc	; 0x1bc <GPIO_PinWrite>
+}
+ 3ec:	cf 91       	pop	r28
+ 3ee:	08 95       	ret
+
+000003f0 <lcd_SendDataSignals>:
+ * Return value    : none
+
+ * description : This functions generates the signals for sending the Data to LCD
+**************************************************************************************************/
+static void lcd_SendDataSignals(void)
+{
+ 3f0:	cf 93       	push	r28
+ 3f2:	df 93       	push	r29
+     GPIO_PinWrite(LCDConfig.RS,1);
+ 3f4:	61 e0       	ldi	r22, 0x01	; 1
+ 3f6:	80 91 99 00 	lds	r24, 0x0099
+ 3fa:	0e 94 de 00 	call	0x1bc	; 0x1bc <GPIO_PinWrite>
+     GPIO_PinWrite(LCDConfig.RW,0);
+ 3fe:	60 e0       	ldi	r22, 0x00	; 0
+ 400:	80 91 9a 00 	lds	r24, 0x009A
+ 404:	0e 94 de 00 	call	0x1bc	; 0x1bc <GPIO_PinWrite>
+     GPIO_PinWrite(LCDConfig.EN,1);
+ 408:	cb e9       	ldi	r28, 0x9B	; 155
+ 40a:	d0 e0       	ldi	r29, 0x00	; 0
+ 40c:	61 e0       	ldi	r22, 0x01	; 1
+ 40e:	88 81       	ld	r24, Y
+ 410:	0e 94 de 00 	call	0x1bc	; 0x1bc <GPIO_PinWrite>
+     DELAY_us(10);
+ 414:	8a e0       	ldi	r24, 0x0A	; 10
+ 416:	90 e0       	ldi	r25, 0x00	; 0
+ 418:	0e 94 49 00 	call	0x92	; 0x92 <DELAY_us>
+     GPIO_PinWrite(LCDConfig.EN,0);
+ 41c:	60 e0       	ldi	r22, 0x00	; 0
+ 41e:	88 81       	ld	r24, Y
+ 420:	0e 94 de 00 	call	0x1bc	; 0x1bc <GPIO_PinWrite>
+}
+ 424:	df 91       	pop	r29
+ 426:	cf 91       	pop	r28
+ 428:	08 95       	ret
+
+0000042a <lcd_BusyCheck>:
+ * description : This functions is used check whether LCD is busy.
+                 It waits till the LCD is busy by polling the LCD busy flag.
+                 After completing the previous operation, LCDs clears its internal busy flag.
+**************************************************************************************************/
+static void lcd_BusyCheck(void)
+{
+ 42a:	df 92       	push	r13
+ 42c:	ef 92       	push	r14
+ 42e:	ff 92       	push	r15
+ 430:	0f 93       	push	r16
+ 432:	1f 93       	push	r17
+ 434:	cf 93       	push	r28
+ 436:	df 93       	push	r29
+    uint8_t busyflag;
+ 
+  if(LCDConfig.RW != P_NC)                         //Perform Busy check if RW pin is used
+ 438:	80 91 9a 00 	lds	r24, 0x009A
+ 43c:	8f 3f       	cpi	r24, 0xFF	; 255
+ 43e:	09 f4       	brne	.+2      	; 0x442 <lcd_BusyCheck+0x18>
+ 440:	4a c0       	rjmp	.+148    	; 0x4d6 <lcd_BusyCheck+0xac>
+   {
+    GPIO_PinDirection(LCDConfig.D7,INPUT); // Configure busy pin as input
+ 442:	60 e0       	ldi	r22, 0x00	; 0
+ 444:	80 91 a3 00 	lds	r24, 0x00A3
+ 448:	0e 94 5c 00 	call	0xb8	; 0xb8 <GPIO_PinDirection>
+    GPIO_PinWrite(LCDConfig.RS,0);           // Select the Command Register by pulling RS LOW
+ 44c:	60 e0       	ldi	r22, 0x00	; 0
+ 44e:	80 91 99 00 	lds	r24, 0x0099
+ 452:	0e 94 de 00 	call	0x1bc	; 0x1bc <GPIO_PinWrite>
+    GPIO_PinWrite(LCDConfig.RW,1);           // Select the Read Operation for busy flag by setting RW
+ 456:	61 e0       	ldi	r22, 0x01	; 1
+ 458:	80 91 9a 00 	lds	r24, 0x009A
+ 45c:	0e 94 de 00 	call	0x1bc	; 0x1bc <GPIO_PinWrite>
+    do
+    {
+
+        GPIO_PinWrite(LCDConfig.EN,0);
+ 460:	cb e9       	ldi	r28, 0x9B	; 155
+ 462:	d0 e0       	ldi	r29, 0x00	; 0
+        DELAY_us(10);
+        GPIO_PinWrite(LCDConfig.EN,1); 
+        DELAY_us(10);
+        busyflag = GPIO_PinRead(LCDConfig.D7);
+ 464:	0f 2e       	mov	r0, r31
+ 466:	f3 ea       	ldi	r31, 0xA3	; 163
+ 468:	ef 2e       	mov	r14, r31
+ 46a:	f0 e0       	ldi	r31, 0x00	; 0
+ 46c:	ff 2e       	mov	r15, r31
+ 46e:	f0 2d       	mov	r31, r0
+
+
+        if(LCDConfig.v_LcdMode_U8 == 4)
+ 470:	08 e9       	ldi	r16, 0x98	; 152
+ 472:	10 e0       	ldi	r17, 0x00	; 0
+    GPIO_PinWrite(LCDConfig.RS,0);           // Select the Command Register by pulling RS LOW
+    GPIO_PinWrite(LCDConfig.RW,1);           // Select the Read Operation for busy flag by setting RW
+    do
+    {
+
+        GPIO_PinWrite(LCDConfig.EN,0);
+ 474:	60 e0       	ldi	r22, 0x00	; 0
+ 476:	88 81       	ld	r24, Y
+ 478:	0e 94 de 00 	call	0x1bc	; 0x1bc <GPIO_PinWrite>
+        DELAY_us(10);
+ 47c:	8a e0       	ldi	r24, 0x0A	; 10
+ 47e:	90 e0       	ldi	r25, 0x00	; 0
+ 480:	0e 94 49 00 	call	0x92	; 0x92 <DELAY_us>
+        GPIO_PinWrite(LCDConfig.EN,1); 
+ 484:	61 e0       	ldi	r22, 0x01	; 1
+ 486:	88 81       	ld	r24, Y
+ 488:	0e 94 de 00 	call	0x1bc	; 0x1bc <GPIO_PinWrite>
+        DELAY_us(10);
+ 48c:	8a e0       	ldi	r24, 0x0A	; 10
+ 48e:	90 e0       	ldi	r25, 0x00	; 0
+ 490:	0e 94 49 00 	call	0x92	; 0x92 <DELAY_us>
+        busyflag = GPIO_PinRead(LCDConfig.D7);
+ 494:	f7 01       	movw	r30, r14
+ 496:	80 81       	ld	r24, Z
+ 498:	0e 94 60 01 	call	0x2c0	; 0x2c0 <GPIO_PinRead>
+ 49c:	d8 2e       	mov	r13, r24
+
+
+        if(LCDConfig.v_LcdMode_U8 == 4)
+ 49e:	f8 01       	movw	r30, r16
+ 4a0:	80 81       	ld	r24, Z
+ 4a2:	84 30       	cpi	r24, 0x04	; 4
+ 4a4:	81 f4       	brne	.+32     	; 0x4c6 <lcd_BusyCheck+0x9c>
+        {
+            /* Perform extra dummy read for 4-bit */            
+            GPIO_PinWrite(LCDConfig.EN,0);
+ 4a6:	60 e0       	ldi	r22, 0x00	; 0
+ 4a8:	88 81       	ld	r24, Y
+ 4aa:	0e 94 de 00 	call	0x1bc	; 0x1bc <GPIO_PinWrite>
+            DELAY_us(10);
+ 4ae:	8a e0       	ldi	r24, 0x0A	; 10
+ 4b0:	90 e0       	ldi	r25, 0x00	; 0
+ 4b2:	0e 94 49 00 	call	0x92	; 0x92 <DELAY_us>
+            GPIO_PinWrite(LCDConfig.EN,1); 
+ 4b6:	61 e0       	ldi	r22, 0x01	; 1
+ 4b8:	88 81       	ld	r24, Y
+ 4ba:	0e 94 de 00 	call	0x1bc	; 0x1bc <GPIO_PinWrite>
+            DELAY_us(10);
+ 4be:	8a e0       	ldi	r24, 0x0A	; 10
+ 4c0:	90 e0       	ldi	r25, 0x00	; 0
+ 4c2:	0e 94 49 00 	call	0x92	; 0x92 <DELAY_us>
+        }    
+    }while(busyflag!=0);
+ 4c6:	d1 10       	cpse	r13, r1
+ 4c8:	d5 cf       	rjmp	.-86     	; 0x474 <lcd_BusyCheck+0x4a>
+
+    GPIO_PinDirection(LCDConfig.D7,OUTPUT); // Configure busy pin as Output
+ 4ca:	61 e0       	ldi	r22, 0x01	; 1
+ 4cc:	80 91 a3 00 	lds	r24, 0x00A3
+ 4d0:	0e 94 5c 00 	call	0xb8	; 0xb8 <GPIO_PinDirection>
+ 4d4:	04 c0       	rjmp	.+8      	; 0x4de <lcd_BusyCheck+0xb4>
+  }
+else
+ {
+    /* Busy flag cannot be read as RW is not available hence Extra delay of 1ms is added 
+      to ensure the LCD completes previous operation and ready to receive new commands/data */
+    DELAY_ms(1);  
+ 4d6:	81 e0       	ldi	r24, 0x01	; 1
+ 4d8:	90 e0       	ldi	r25, 0x00	; 0
+ 4da:	0e 94 50 00 	call	0xa0	; 0xa0 <DELAY_ms>
+ }
+}
+ 4de:	df 91       	pop	r29
+ 4e0:	cf 91       	pop	r28
+ 4e2:	1f 91       	pop	r17
+ 4e4:	0f 91       	pop	r16
+ 4e6:	ff 90       	pop	r15
+ 4e8:	ef 90       	pop	r14
+ 4ea:	df 90       	pop	r13
+ 4ec:	08 95       	ret
+
+000004ee <LCD_SetUp>:
+               gpioPins_et D3,
+               gpioPins_et D4,
+               gpioPins_et D5,
+               gpioPins_et D6,
+               gpioPins_et D7 )
+{
+ 4ee:	8f 92       	push	r8
+ 4f0:	9f 92       	push	r9
+ 4f2:	af 92       	push	r10
+ 4f4:	bf 92       	push	r11
+ 4f6:	cf 92       	push	r12
+ 4f8:	df 92       	push	r13
+ 4fa:	ef 92       	push	r14
+ 4fc:	ff 92       	push	r15
+ 4fe:	0f 93       	push	r16
+ 500:	1f 93       	push	r17
+ 502:	cf 93       	push	r28
+ 504:	df 93       	push	r29
+ 506:	cd b7       	in	r28, 0x3d	; 61
+ 508:	de b7       	in	r29, 0x3e	; 62
+ 50a:	d8 2e       	mov	r13, r24
+ 50c:	f6 2e       	mov	r15, r22
+ 50e:	14 2f       	mov	r17, r20
+ 510:	9f 84       	ldd	r9, Y+15	; 0x0f
+ 512:	b8 88       	ldd	r11, Y+16	; 0x10
+  /* Copy the PIN numbers where the LCD is connected */
+    LCDConfig.RS = RS;
+ 514:	80 93 99 00 	sts	0x0099, r24
+    LCDConfig.RW = RW;
+ 518:	60 93 9a 00 	sts	0x009A, r22
+    LCDConfig.EN = EN;
+ 51c:	40 93 9b 00 	sts	0x009B, r20
+
+    LCDConfig.D0 = D0;
+ 520:	20 93 9c 00 	sts	0x009C, r18
+    LCDConfig.D1 = D1;
+ 524:	00 93 9d 00 	sts	0x009D, r16
+    LCDConfig.D2 = D2;
+ 528:	e0 92 9e 00 	sts	0x009E, r14
+    LCDConfig.D3 = D3;
+ 52c:	c0 92 9f 00 	sts	0x009F, r12
+    LCDConfig.D4 = D4;
+ 530:	a0 92 a0 00 	sts	0x00A0, r10
+    LCDConfig.D5 = D5;
+ 534:	80 92 a1 00 	sts	0x00A1, r8
+    LCDConfig.D6 = D6;
+ 538:	90 92 a2 00 	sts	0x00A2, r9
+    LCDConfig.D7 = D7;
+ 53c:	b0 92 a3 00 	sts	0x00A3, r11
+
+
+    if((D0 == P_NC) || (D1 == P_NC) || (D2 == P_NC) || (D3 == P_NC))
+ 540:	2f 3f       	cpi	r18, 0xFF	; 255
+ 542:	39 f0       	breq	.+14     	; 0x552 <LCD_SetUp+0x64>
+ 544:	0f 3f       	cpi	r16, 0xFF	; 255
+ 546:	29 f0       	breq	.+10     	; 0x552 <LCD_SetUp+0x64>
+ 548:	8f ef       	ldi	r24, 0xFF	; 255
+ 54a:	e8 16       	cp	r14, r24
+ 54c:	11 f0       	breq	.+4      	; 0x552 <LCD_SetUp+0x64>
+ 54e:	c8 12       	cpse	r12, r24
+ 550:	04 c0       	rjmp	.+8      	; 0x55a <LCD_SetUp+0x6c>
+    {
+        LCDConfig.v_LcdMode_U8 = 4; // Select 4-bit mode as D0-D3 are not used(P_NC)
+ 552:	84 e0       	ldi	r24, 0x04	; 4
+ 554:	80 93 98 00 	sts	0x0098, r24
+ 558:	13 c0       	rjmp	.+38     	; 0x580 <LCD_SetUp+0x92>
+    }
+    else
+    {
+        LCDConfig.v_LcdMode_U8 = 8; // 8-bit mode configure D0-D3 as output.      
+ 55a:	88 e0       	ldi	r24, 0x08	; 8
+ 55c:	80 93 98 00 	sts	0x0098, r24
+        GPIO_PinDirection(D0,OUTPUT);
+ 560:	61 e0       	ldi	r22, 0x01	; 1
+ 562:	82 2f       	mov	r24, r18
+ 564:	0e 94 5c 00 	call	0xb8	; 0xb8 <GPIO_PinDirection>
+        GPIO_PinDirection(D1,OUTPUT);
+ 568:	61 e0       	ldi	r22, 0x01	; 1
+ 56a:	80 2f       	mov	r24, r16
+ 56c:	0e 94 5c 00 	call	0xb8	; 0xb8 <GPIO_PinDirection>
+        GPIO_PinDirection(D2,OUTPUT);
+ 570:	61 e0       	ldi	r22, 0x01	; 1
+ 572:	8e 2d       	mov	r24, r14
+ 574:	0e 94 5c 00 	call	0xb8	; 0xb8 <GPIO_PinDirection>
+        GPIO_PinDirection(D3,OUTPUT);
+ 578:	61 e0       	ldi	r22, 0x01	; 1
+ 57a:	8c 2d       	mov	r24, r12
+ 57c:	0e 94 5c 00 	call	0xb8	; 0xb8 <GPIO_PinDirection>
+    }
+
+    /* Configure RS,RW,EN, D4-D7 as Output for both 4/8-bit mode.*/
+    GPIO_PinDirection(RS,OUTPUT);
+ 580:	61 e0       	ldi	r22, 0x01	; 1
+ 582:	8d 2d       	mov	r24, r13
+ 584:	0e 94 5c 00 	call	0xb8	; 0xb8 <GPIO_PinDirection>
+    GPIO_PinDirection(RW,OUTPUT);
+ 588:	61 e0       	ldi	r22, 0x01	; 1
+ 58a:	8f 2d       	mov	r24, r15
+ 58c:	0e 94 5c 00 	call	0xb8	; 0xb8 <GPIO_PinDirection>
+    GPIO_PinDirection(EN,OUTPUT);
+ 590:	61 e0       	ldi	r22, 0x01	; 1
+ 592:	81 2f       	mov	r24, r17
+ 594:	0e 94 5c 00 	call	0xb8	; 0xb8 <GPIO_PinDirection>
+
+    GPIO_PinDirection(D4,OUTPUT);
+ 598:	61 e0       	ldi	r22, 0x01	; 1
+ 59a:	8a 2d       	mov	r24, r10
+ 59c:	0e 94 5c 00 	call	0xb8	; 0xb8 <GPIO_PinDirection>
+    GPIO_PinDirection(D5,OUTPUT);
+ 5a0:	61 e0       	ldi	r22, 0x01	; 1
+ 5a2:	88 2d       	mov	r24, r8
+ 5a4:	0e 94 5c 00 	call	0xb8	; 0xb8 <GPIO_PinDirection>
+    GPIO_PinDirection(D6,OUTPUT);
+ 5a8:	61 e0       	ldi	r22, 0x01	; 1
+ 5aa:	89 2d       	mov	r24, r9
+ 5ac:	0e 94 5c 00 	call	0xb8	; 0xb8 <GPIO_PinDirection>
+    GPIO_PinDirection(D7,OUTPUT);  
+ 5b0:	61 e0       	ldi	r22, 0x01	; 1
+ 5b2:	8b 2d       	mov	r24, r11
+ 5b4:	0e 94 5c 00 	call	0xb8	; 0xb8 <GPIO_PinDirection>
+}
+ 5b8:	df 91       	pop	r29
+ 5ba:	cf 91       	pop	r28
+ 5bc:	1f 91       	pop	r17
+ 5be:	0f 91       	pop	r16
+ 5c0:	ff 90       	pop	r15
+ 5c2:	ef 90       	pop	r14
+ 5c4:	df 90       	pop	r13
+ 5c6:	cf 90       	pop	r12
+ 5c8:	bf 90       	pop	r11
+ 5ca:	af 90       	pop	r10
+ 5cc:	9f 90       	pop	r9
+ 5ce:	8f 90       	pop	r8
+ 5d0:	08 95       	ret
+
+000005d2 <LCD_CmdWrite>:
+                Some of the commonly used commands are defined in lcd.h.
+                For more commands refer the data sheet and send the supported command.                
+                The behaviour is undefined if unsupported commands are sent.    
+****************************************************************************************************/
+void LCD_CmdWrite( uint8_t v_lcdCmd_u8)
+{
+ 5d2:	cf 93       	push	r28
+ 5d4:	c8 2f       	mov	r28, r24
+    lcd_BusyCheck();
+ 5d6:	0e 94 15 02 	call	0x42a	; 0x42a <lcd_BusyCheck>
+    if(LCDConfig.v_LcdMode_U8 == C_EightBitMode_U8)
+ 5da:	80 91 98 00 	lds	r24, 0x0098
+ 5de:	88 30       	cpi	r24, 0x08	; 8
+ 5e0:	21 f4       	brne	.+8      	; 0x5ea <LCD_CmdWrite+0x18>
+     {
+         lcd_SendLowerNibble(v_lcdCmd_u8);
+ 5e2:	8c 2f       	mov	r24, r28
+ 5e4:	0e 94 d9 01 	call	0x3b2	; 0x3b2 <lcd_SendLowerNibble>
+ 5e8:	07 c0       	rjmp	.+14     	; 0x5f8 <LCD_CmdWrite+0x26>
+     }
+     else
+     {
+         lcd_SendHigherNibble(v_lcdCmd_u8);
+ 5ea:	8c 2f       	mov	r24, r28
+ 5ec:	0e 94 9b 01 	call	0x336	; 0x336 <lcd_SendHigherNibble>
+         lcd_SendCmdSignals();
+ 5f0:	0e 94 bc 01 	call	0x378	; 0x378 <lcd_SendCmdSignals>
+         v_lcdCmd_u8 = v_lcdCmd_u8 << 4;
+ 5f4:	c2 95       	swap	r28
+ 5f6:	c0 7f       	andi	r28, 0xF0	; 240
+     }
+
+     lcd_SendHigherNibble(v_lcdCmd_u8);
+ 5f8:	8c 2f       	mov	r24, r28
+ 5fa:	0e 94 9b 01 	call	0x336	; 0x336 <lcd_SendHigherNibble>
+     lcd_SendCmdSignals();
+ 5fe:	0e 94 bc 01 	call	0x378	; 0x378 <lcd_SendCmdSignals>
+}
+ 602:	cf 91       	pop	r28
+ 604:	08 95       	ret
+
+00000606 <LCD_GoToLine>:
+           C_LcdLineThree,
+
+****************************************************************************************************/
+void LCD_GoToLine(uint8_t v_lineNumber_u8)
+{
+    if(v_lineNumber_u8 < LCDConfig.v_MaxSupportedLines_U8)
+ 606:	90 91 96 00 	lds	r25, 0x0096
+ 60a:	89 17       	cp	r24, r25
+ 60c:	58 f4       	brcc	.+22     	; 0x624 <LCD_GoToLine+0x1e>
+    {
+        /* If the line number is within range then
+           Move the Cursor to beginning of the specified line */
+        v_LcdTrackCursorPos_U8 = 0x00;
+ 60e:	10 92 a4 00 	sts	0x00A4, r1
+        v_LcdTrackLineNum_U8 = v_lineNumber_u8;
+ 612:	80 93 a5 00 	sts	0x00A5, r24
+        LCD_CmdWrite(ARR_LcdLineNumAddress_U8[v_lineNumber_u8]);
+ 616:	e8 2f       	mov	r30, r24
+ 618:	f0 e0       	ldi	r31, 0x00	; 0
+ 61a:	e0 5a       	subi	r30, 0xA0	; 160
+ 61c:	ff 4f       	sbci	r31, 0xFF	; 255
+ 61e:	80 81       	ld	r24, Z
+ 620:	0e 94 e9 02 	call	0x5d2	; 0x5d2 <LCD_CmdWrite>
+ 624:	08 95       	ret
+
+00000626 <LCD_Clear>:
+
+ * description  :This function clears the LCD and moves the cursor to beginning of first line
+****************************************************************************************************/
+void LCD_Clear()
+{
+    LCD_CmdWrite(CMD_LCD_CLEAR);    // Clear the LCD and go to First line First Position
+ 626:	81 e0       	ldi	r24, 0x01	; 1
+ 628:	0e 94 e9 02 	call	0x5d2	; 0x5d2 <LCD_CmdWrite>
+    LCD_GoToLine(C_LcdLineZero);
+ 62c:	80 e0       	ldi	r24, 0x00	; 0
+ 62e:	0e 94 03 03 	call	0x606	; 0x606 <LCD_GoToLine>
+ 632:	08 95       	ret
+
+00000634 <LCD_Init>:
+**************************************************************************************************/
+void LCD_Init(uint8_t v_lcdNoOfLines_u8, uint8_t v_MaxCharsPerLine_u8)
+{
+
+
+    LCDConfig.v_MaxSupportedChars_U8 = v_MaxCharsPerLine_u8; //Maintaian the LCD type
+ 634:	60 93 97 00 	sts	0x0097, r22
+    LCDConfig.v_MaxSupportedLines_U8 = v_lcdNoOfLines_u8;
+ 638:	80 93 96 00 	sts	0x0096, r24
+    if(v_lcdNoOfLines_u8 > C_LcdLineTwo)
+ 63c:	83 30       	cpi	r24, 0x03	; 3
+ 63e:	40 f0       	brcs	.+16     	; 0x650 <LCD_Init+0x1c>
+    {
+        ARR_LcdLineNumAddress_U8[C_LcdLineTwo] =  0x90 + (v_MaxCharsPerLine_u8 & 0x0fu);
+ 640:	6f 70       	andi	r22, 0x0F	; 15
+ 642:	80 e9       	ldi	r24, 0x90	; 144
+ 644:	86 0f       	add	r24, r22
+ 646:	80 93 62 00 	sts	0x0062, r24
+        ARR_LcdLineNumAddress_U8[C_LcdLineThree] =  0xd0 + (v_MaxCharsPerLine_u8 & 0x0fu);
+ 64a:	60 53       	subi	r22, 0x30	; 48
+ 64c:	60 93 63 00 	sts	0x0063, r22
+    }
+
+    DELAY_ms(100);
+ 650:	84 e6       	ldi	r24, 0x64	; 100
+ 652:	90 e0       	ldi	r25, 0x00	; 0
+ 654:	0e 94 50 00 	call	0xa0	; 0xa0 <DELAY_ms>
+
+    if(LCDConfig.v_LcdMode_U8 == C_EightBitMode_U8)
+ 658:	80 91 98 00 	lds	r24, 0x0098
+ 65c:	88 30       	cpi	r24, 0x08	; 8
+ 65e:	21 f4       	brne	.+8      	; 0x668 <LCD_Init+0x34>
+    {
+        LCD_CmdWrite(CMD_LCD_EIGHT_BIT_MODE); // Initialize the LCD for 8-bit 5x7 matrix type
+ 660:	88 e3       	ldi	r24, 0x38	; 56
+ 662:	0e 94 e9 02 	call	0x5d2	; 0x5d2 <LCD_CmdWrite>
+ 666:	29 c0       	rjmp	.+82     	; 0x6ba <LCD_Init+0x86>
+    }
+    else if(LCDConfig.v_LcdMode_U8 == C_FourBitMode_U8)
+ 668:	84 30       	cpi	r24, 0x04	; 4
+ 66a:	39 f5       	brne	.+78     	; 0x6ba <LCD_Init+0x86>
+                 This is used only in 4-bit mode as the LCD by default boots in 8-Bit mode.
+----------------------------------------------------------------------------------*/
+static void lcd_Reset(void)
+{
+    /* LCD reset sequence for 4-bit mode, refer data sheet for more info */
+    lcd_SendHigherNibble(0x30);
+ 66c:	80 e3       	ldi	r24, 0x30	; 48
+ 66e:	0e 94 9b 01 	call	0x336	; 0x336 <lcd_SendHigherNibble>
+    lcd_SendCmdSignals();
+ 672:	0e 94 bc 01 	call	0x378	; 0x378 <lcd_SendCmdSignals>
+    DELAY_ms(100);
+ 676:	84 e6       	ldi	r24, 0x64	; 100
+ 678:	90 e0       	ldi	r25, 0x00	; 0
+ 67a:	0e 94 50 00 	call	0xa0	; 0xa0 <DELAY_ms>
+    lcd_SendHigherNibble(0x30);
+ 67e:	80 e3       	ldi	r24, 0x30	; 48
+ 680:	0e 94 9b 01 	call	0x336	; 0x336 <lcd_SendHigherNibble>
+    lcd_SendCmdSignals();
+ 684:	0e 94 bc 01 	call	0x378	; 0x378 <lcd_SendCmdSignals>
+    DELAY_us(200);
+ 688:	88 ec       	ldi	r24, 0xC8	; 200
+ 68a:	90 e0       	ldi	r25, 0x00	; 0
+ 68c:	0e 94 49 00 	call	0x92	; 0x92 <DELAY_us>
+    lcd_SendHigherNibble(0x30);
+ 690:	80 e3       	ldi	r24, 0x30	; 48
+ 692:	0e 94 9b 01 	call	0x336	; 0x336 <lcd_SendHigherNibble>
+    lcd_SendCmdSignals();
+ 696:	0e 94 bc 01 	call	0x378	; 0x378 <lcd_SendCmdSignals>
+    DELAY_us(200);
+ 69a:	88 ec       	ldi	r24, 0xC8	; 200
+ 69c:	90 e0       	ldi	r25, 0x00	; 0
+ 69e:	0e 94 49 00 	call	0x92	; 0x92 <DELAY_us>
+    lcd_SendHigherNibble(0x20);
+ 6a2:	80 e2       	ldi	r24, 0x20	; 32
+ 6a4:	0e 94 9b 01 	call	0x336	; 0x336 <lcd_SendHigherNibble>
+    lcd_SendCmdSignals();
+ 6a8:	0e 94 bc 01 	call	0x378	; 0x378 <lcd_SendCmdSignals>
+    DELAY_us(200);
+ 6ac:	88 ec       	ldi	r24, 0xC8	; 200
+ 6ae:	90 e0       	ldi	r25, 0x00	; 0
+ 6b0:	0e 94 49 00 	call	0x92	; 0x92 <DELAY_us>
+        LCD_CmdWrite(CMD_LCD_EIGHT_BIT_MODE); // Initialize the LCD for 8-bit 5x7 matrix type
+    }
+    else if(LCDConfig.v_LcdMode_U8 == C_FourBitMode_U8)
+    {
+        lcd_Reset();
+        LCD_CmdWrite(CMD_LCD_FOUR_BIT_MODE); // Initialize the LCD for 4-bit 5x7 matrix type 
+ 6b4:	88 e2       	ldi	r24, 0x28	; 40
+ 6b6:	0e 94 e9 02 	call	0x5d2	; 0x5d2 <LCD_CmdWrite>
+    }
+
+    LCD_CmdWrite(CMD_DISPLAY_ON_CURSOR_ON);     // Display ON cursor ON
+ 6ba:	8e e0       	ldi	r24, 0x0E	; 14
+ 6bc:	0e 94 e9 02 	call	0x5d2	; 0x5d2 <LCD_CmdWrite>
+    LCD_Clear();                             // Clear the LCD and go to First line First Position
+ 6c0:	0e 94 13 03 	call	0x626	; 0x626 <LCD_Clear>
+ 6c4:	08 95       	ret
+
+000006c6 <LCD_GoToNextLine>:
+****************************************************************************************************/
+void  LCD_GoToNextLine(void)
+{
+    /*Increment the current line number.
+      In case it exceeds the limit, rool it back to first line */
+    v_LcdTrackLineNum_U8++;
+ 6c6:	80 91 a5 00 	lds	r24, 0x00A5
+ 6ca:	8f 5f       	subi	r24, 0xFF	; 255
+ 6cc:	80 93 a5 00 	sts	0x00A5, r24
+    v_LcdTrackCursorPos_U8 = 0x00;
+ 6d0:	10 92 a4 00 	sts	0x00A4, r1
+    if(v_LcdTrackLineNum_U8 >= LCDConfig.v_MaxSupportedLines_U8)
+ 6d4:	90 91 96 00 	lds	r25, 0x0096
+ 6d8:	89 17       	cp	r24, r25
+ 6da:	10 f0       	brcs	.+4      	; 0x6e0 <LCD_GoToNextLine+0x1a>
+        v_LcdTrackLineNum_U8 = C_LcdLineZero;
+ 6dc:	10 92 a5 00 	sts	0x00A5, r1
+    LCD_CmdWrite(ARR_LcdLineNumAddress_U8[v_LcdTrackLineNum_U8]);
+ 6e0:	e0 91 a5 00 	lds	r30, 0x00A5
+ 6e4:	f0 e0       	ldi	r31, 0x00	; 0
+ 6e6:	e0 5a       	subi	r30, 0xA0	; 160
+ 6e8:	ff 4f       	sbci	r31, 0xFF	; 255
+ 6ea:	80 81       	ld	r24, Z
+ 6ec:	0e 94 e9 02 	call	0x5d2	; 0x5d2 <LCD_CmdWrite>
+ 6f0:	08 95       	ret
+
+000006f2 <LCD_DisplayChar>:
+ * description  : This function sends a character to be displayed on LCD.
+                  Any valid ascii value can be passed to display respective character
+
+****************************************************************************************************/
+void LCD_DisplayChar(char v_lcdData_u8)
+{
+ 6f2:	cf 93       	push	r28
+ 6f4:	c8 2f       	mov	r28, r24
+    if((v_LcdTrackCursorPos_U8>=LCDConfig.v_MaxSupportedChars_U8) || (v_lcdData_u8=='\n'))
+ 6f6:	90 91 97 00 	lds	r25, 0x0097
+ 6fa:	80 91 a4 00 	lds	r24, 0x00A4
+ 6fe:	89 17       	cp	r24, r25
+ 700:	18 f4       	brcc	.+6      	; 0x708 <LCD_DisplayChar+0x16>
+ 702:	ca 30       	cpi	r28, 0x0A	; 10
+ 704:	29 f4       	brne	.+10     	; 0x710 <LCD_DisplayChar+0x1e>
+ 706:	20 c0       	rjmp	.+64     	; 0x748 <LCD_DisplayChar+0x56>
+    {
+        /* If the cursor has reached to end of line on page1
+        OR NewLine command is issued Then Move the cursor to next line */
+        LCD_GoToNextLine();
+ 708:	0e 94 63 03 	call	0x6c6	; 0x6c6 <LCD_GoToNextLine>
+    }
+    if(v_lcdData_u8!='\n') /* Display the character if its not newLine Char */
+ 70c:	ca 30       	cpi	r28, 0x0A	; 10
+ 70e:	f1 f0       	breq	.+60     	; 0x74c <LCD_DisplayChar+0x5a>
+
+ * description : This functions is used to send a byte of data to LCD.                 .    
+**************************************************************************************************/
+static void lcd_DataWrite( uint8_t dataByte)
+{
+    lcd_BusyCheck();
+ 710:	0e 94 15 02 	call	0x42a	; 0x42a <lcd_BusyCheck>
+    if(LCDConfig.v_LcdMode_U8 == C_EightBitMode_U8)
+ 714:	80 91 98 00 	lds	r24, 0x0098
+ 718:	88 30       	cpi	r24, 0x08	; 8
+ 71a:	21 f4       	brne	.+8      	; 0x724 <LCD_DisplayChar+0x32>
+     {
+         lcd_SendLowerNibble(dataByte);
+ 71c:	8c 2f       	mov	r24, r28
+ 71e:	0e 94 d9 01 	call	0x3b2	; 0x3b2 <lcd_SendLowerNibble>
+ 722:	07 c0       	rjmp	.+14     	; 0x732 <LCD_DisplayChar+0x40>
+     }
+     else
+     {
+         lcd_SendHigherNibble(dataByte);
+ 724:	8c 2f       	mov	r24, r28
+ 726:	0e 94 9b 01 	call	0x336	; 0x336 <lcd_SendHigherNibble>
+         lcd_SendDataSignals();
+ 72a:	0e 94 f8 01 	call	0x3f0	; 0x3f0 <lcd_SendDataSignals>
+         dataByte = dataByte << 4;
+ 72e:	c2 95       	swap	r28
+ 730:	c0 7f       	andi	r28, 0xF0	; 240
+     }
+
+     lcd_SendHigherNibble(dataByte);
+ 732:	8c 2f       	mov	r24, r28
+ 734:	0e 94 9b 01 	call	0x336	; 0x336 <lcd_SendHigherNibble>
+     lcd_SendDataSignals();
+ 738:	0e 94 f8 01 	call	0x3f0	; 0x3f0 <lcd_SendDataSignals>
+    }
+    if(v_lcdData_u8!='\n') /* Display the character if its not newLine Char */
+    {
+
+        lcd_DataWrite(v_lcdData_u8); /* Display the data and keep track of cursor */
+        v_LcdTrackCursorPos_U8++;
+ 73c:	80 91 a4 00 	lds	r24, 0x00A4
+ 740:	8f 5f       	subi	r24, 0xFF	; 255
+ 742:	80 93 a4 00 	sts	0x00A4, r24
+ 746:	02 c0       	rjmp	.+4      	; 0x74c <LCD_DisplayChar+0x5a>
+{
+    if((v_LcdTrackCursorPos_U8>=LCDConfig.v_MaxSupportedChars_U8) || (v_lcdData_u8=='\n'))
+    {
+        /* If the cursor has reached to end of line on page1
+        OR NewLine command is issued Then Move the cursor to next line */
+        LCD_GoToNextLine();
+ 748:	0e 94 63 03 	call	0x6c6	; 0x6c6 <LCD_GoToNextLine>
+    {
+
+        lcd_DataWrite(v_lcdData_u8); /* Display the data and keep track of cursor */
+        v_LcdTrackCursorPos_U8++;
+    }
+}
+ 74c:	cf 91       	pop	r28
+ 74e:	08 95       	ret
+
+00000750 <LCD_DisplayString>:
+                    and traverses till the end(NULL CHAR)and displays a char each time.
+
+****************************************************************************************************/
+#if (Enable_LCD_DisplayString==1)
+void LCD_DisplayString(const char *ptr_stringPointer_u8)
+{
+ 750:	cf 93       	push	r28
+ 752:	df 93       	push	r29
+ 754:	ec 01       	movw	r28, r24
+    while((*ptr_stringPointer_u8)!=0)
+ 756:	88 81       	ld	r24, Y
+ 758:	88 23       	and	r24, r24
+ 75a:	31 f0       	breq	.+12     	; 0x768 <LCD_DisplayString+0x18>
+ 75c:	21 96       	adiw	r28, 0x01	; 1
+        LCD_DisplayChar(*ptr_stringPointer_u8++); // Loop through the string and display char by char
+ 75e:	0e 94 79 03 	call	0x6f2	; 0x6f2 <LCD_DisplayChar>
+
+****************************************************************************************************/
+#if (Enable_LCD_DisplayString==1)
+void LCD_DisplayString(const char *ptr_stringPointer_u8)
+{
+    while((*ptr_stringPointer_u8)!=0)
+ 762:	89 91       	ld	r24, Y+
+ 764:	81 11       	cpse	r24, r1
+ 766:	fb cf       	rjmp	.-10     	; 0x75e <LCD_DisplayString+0xe>
+        LCD_DisplayChar(*ptr_stringPointer_u8++); // Loop through the string and display char by char
+}
+ 768:	df 91       	pop	r29
+ 76a:	cf 91       	pop	r28
+ 76c:	08 95       	ret
+
+0000076e <main>:
+#include "lcd.h"
+
+int main()
+{
+	     /*Connect RS->PB0, RW->PB1, EN->PB2 and data bus to PORTC.4 to PORTC.7*/
+	     LCD_SetUp(PB_0,PB_1,PB_2,P_NC,P_NC,P_NC,P_NC,PC_4,PC_5,PC_6,PC_7);
+ 76e:	87 e1       	ldi	r24, 0x17	; 23
+ 770:	8f 93       	push	r24
+ 772:	86 e1       	ldi	r24, 0x16	; 22
+ 774:	8f 93       	push	r24
+ 776:	0f 2e       	mov	r0, r31
+ 778:	f5 e1       	ldi	r31, 0x15	; 21
+ 77a:	8f 2e       	mov	r8, r31
+ 77c:	f0 2d       	mov	r31, r0
+ 77e:	0f 2e       	mov	r0, r31
+ 780:	f4 e1       	ldi	r31, 0x14	; 20
+ 782:	af 2e       	mov	r10, r31
+ 784:	f0 2d       	mov	r31, r0
+ 786:	cc 24       	eor	r12, r12
+ 788:	ca 94       	dec	r12
+ 78a:	ee 24       	eor	r14, r14
+ 78c:	ea 94       	dec	r14
+ 78e:	0f ef       	ldi	r16, 0xFF	; 255
+ 790:	2f ef       	ldi	r18, 0xFF	; 255
+ 792:	4a e0       	ldi	r20, 0x0A	; 10
+ 794:	69 e0       	ldi	r22, 0x09	; 9
+ 796:	88 e0       	ldi	r24, 0x08	; 8
+ 798:	0e 94 77 02 	call	0x4ee	; 0x4ee <LCD_SetUp>
+	     LCD_Init(4,20);
+ 79c:	64 e1       	ldi	r22, 0x14	; 20
+ 79e:	84 e0       	ldi	r24, 0x04	; 4
+ 7a0:	0e 94 1a 03 	call	0x634	; 0x634 <LCD_Init>
+	     
+	     LCD_DisplayString("Explore Embedded\n");
+ 7a4:	84 e6       	ldi	r24, 0x64	; 100
+ 7a6:	90 e0       	ldi	r25, 0x00	; 0
+ 7a8:	0e 94 a8 03 	call	0x750	; 0x750 <LCD_DisplayString>
+	     LCD_DisplayString("LCD 4-bit Mode\n");
+ 7ac:	86 e7       	ldi	r24, 0x76	; 118
+ 7ae:	90 e0       	ldi	r25, 0x00	; 0
+ 7b0:	0e 94 a8 03 	call	0x750	; 0x750 <LCD_DisplayString>
+	     LCD_DisplayString("20 x 4 \n");
+ 7b4:	86 e8       	ldi	r24, 0x86	; 134
+ 7b6:	90 e0       	ldi	r25, 0x00	; 0
+ 7b8:	0e 94 a8 03 	call	0x750	; 0x750 <LCD_DisplayString>
+	     LCD_DisplayString(":)  :O");
+ 7bc:	8f e8       	ldi	r24, 0x8F	; 143
+ 7be:	90 e0       	ldi	r25, 0x00	; 0
+ 7c0:	0e 94 a8 03 	call	0x750	; 0x750 <LCD_DisplayString>
+ 7c4:	0f 90       	pop	r0
+ 7c6:	0f 90       	pop	r0
+ 7c8:	ff cf       	rjmp	.-2      	; 0x7c8 <main+0x5a>
+
+000007ca <_exit>:
+ 7ca:	f8 94       	cli
+
+000007cc <__stop_program>:
+ 7cc:	ff cf       	rjmp	.-2      	; 0x7cc <__stop_program>

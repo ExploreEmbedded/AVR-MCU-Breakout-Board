@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Atmel Studio Solution File, Format Version 11.00
+Project("{54F91283-7BC4-4236-8FF9-10F437C3AD48}") = "atmega32blink", "atmega32blink\atmega32blink.cproj", "{50C98217-5F50-436C-9B42-FB3BB6879D89}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|AVR = Debug|AVR
+		Release|AVR = Release|AVR
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{50C98217-5F50-436C-9B42-FB3BB6879D89}.Debug|AVR.ActiveCfg = Debug|AVR
+		{50C98217-5F50-436C-9B42-FB3BB6879D89}.Debug|AVR.Build.0 = Debug|AVR
+		{50C98217-5F50-436C-9B42-FB3BB6879D89}.Release|AVR.ActiveCfg = Release|AVR
+		{50C98217-5F50-436C-9B42-FB3BB6879D89}.Release|AVR.Build.0 = Release|AVR
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
