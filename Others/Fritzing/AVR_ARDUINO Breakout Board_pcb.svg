@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   width="20mm"
+   height="60mm"
+   viewBox="0 0 70.866142 212.59842"
+   id="svg82486"
+   version="1.1">
+  <defs
+     id="defs82488" />
+  <metadata
+     id="metadata82491">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     id="layer1"
+     transform="translate(0,-839.76378)">
+    <g
+       id="g4490"
+       transform="translate(-1.346849,841.8667)">
+      <g
+         id="copper0">
+        <g
+           id="copper1">
+          <g
+             transform="matrix(0,-1,1,0,-121.74654,155.75707)"
+             id="silkscreen"
+             style="display:inline">
+            <path
+               d="m 9.0014603,159.74862 0,-31.5 65.2499997,0 0,4.5 13.5,0 0,-4.5 65.25,0 0,31.5 z"
+               id="path14906"
+               style="display:inline;fill:none;stroke:#ffffff;stroke-width:1.25;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+            <path
+               d="m 132.75,134.55 2.25,-3.6 2.25,3.6 z"
+               id="path4994"
+               style="fill:#ffffff;fill-opacity:1;stroke:#ffffff;stroke-width:0.44999999;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+          </g>
+          <path
+             style="display:inline;fill:none;stroke:#f7bd13;stroke-width:1.79999995;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+             id="connector5pad"
+             d="m 27.936208,40.547678 a 2.25,2.25 0 0 1 0,4.5 2.25,2.25 0 1 1 0,-4.5 z" />
+          <path
+             style="display:inline;fill:none;stroke:#f7bd13;stroke-width:1.79999995;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+             id="connector7pad"
+             d="m 27.936208,49.547678 a 2.25,2.25 0 0 1 0,4.5 2.25,2.25 0 1 1 0,-4.5 z" />
+          <path
+             style="display:inline;fill:none;stroke:#f7bd13;stroke-width:1.79999995;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+             id="connector9pad"
+             d="m 27.936208,58.547681 a 2.25,2.25 0 0 1 0,4.5 2.25,2.25 0 1 1 0,-4.5 z" />
+          <path
+             style="display:inline;fill:none;stroke:#f7bd13;stroke-width:1.79999995;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+             id="connector15pad"
+             d="m 27.936208,85.547681 a 2.25,2.25 0 0 1 0,4.5 2.25,2.25 0 1 1 0,-4.5 z" />
+          <path
+             style="display:inline;fill:none;stroke:#f7bd13;stroke-width:1.79999995;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+             id="connector17pad"
+             d="m 27.936208,94.547681 a 2.25,2.25 0 0 1 0,4.5 2.25,2.25 0 1 1 0,-4.5 z" />
+          <path
+             style="display:inline;fill:none;stroke:#f7bd13;stroke-width:1.79999995;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+             id="connector19pad"
+             d="m 27.936208,103.54768 a 2.25,2.25 0 0 1 0,4.5 2.25,2.25 0 1 1 0,-4.5 z" />
+          <path
+             style="display:inline;fill:none;stroke:#f7bd13;stroke-width:1.79999995;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+             id="connector11pad"
+             d="m 27.936208,67.547681 a 2.25,2.25 0 0 1 0,4.5 2.25,2.25 0 1 1 0,-4.5 z" />
+          <path
+             style="display:inline;fill:none;stroke:#f7bd13;stroke-width:1.79999995;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+             id="connector13pad"
+             d="m 27.936208,76.547681 a 2.25,2.25 0 0 1 0,4.5 2.25,2.25 0 1 1 0,-4.5 z" />
+          <path
+             style="display:inline;fill:none;stroke:#f7bd13;stroke-width:1.79999995;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+             id="connector23pad"
+             d="m 27.936208,121.54767 a 2.25,2.25 0 0 1 0,4.5 2.25,2.25 0 1 1 0,-4.5 z" />
+          <path
+             style="display:inline;fill:none;stroke:#f7bd13;stroke-width:1.79999995;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+             id="connector25pad"
+             d="m 27.936208,130.54767 a 2.25,2.25 0 0 1 0,4.5 2.25,2.25 0 1 1 0,-4.5 z" />
+          <path
+             style="display:inline;fill:none;stroke:#f7bd13;stroke-width:1.79999995;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+             id="connector21pad"
+             d="m 27.936208,112.54767 a 2.25,2.25 0 0 1 0,4.5 2.25,2.25 0 1 1 0,-4.5 z" />
+          <path
+             style="display:inline;fill:none;stroke:#f7bd13;stroke-width:1.79999995;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+             id="connector6pad"
+             d="m 44.936208,40.547678 a 2.25,2.25 0 0 1 0,4.5 2.25,2.25 0 1 1 0,-4.5 z" />
+          <path
+             style="display:inline;fill:none;stroke:#f7bd13;stroke-width:1.79999995;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+             id="connector8pad"
+             d="m 44.936208,49.547678 a 2.25,2.25 0 0 1 0,4.5 2.25,2.25 0 1 1 0,-4.5 z" />
+          <path
+             style="display:inline;fill:none;stroke:#f7bd13;stroke-width:1.79999995;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+             id="connector10pad"
+             d="m 44.936208,58.547681 a 2.25,2.25 0 0 1 0,4.5 2.25,2.25 0 1 1 0,-4.5 z" />
+          <path
+             style="display:inline;fill:none;stroke:#f7bd13;stroke-width:1.79999995;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+             id="connector16pad"
+             d="m 44.936208,85.547681 a 2.25,2.25 0 0 1 0,4.5 2.25,2.25 0 1 1 0,-4.5 z" />
+          <path
+             style="display:inline;fill:none;stroke:#f7bd13;stroke-width:1.79999995;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+             id="connector18pad"
+             d="m 44.936208,94.547681 a 2.25,2.25 0 0 1 0,4.5 2.25,2.25 0 1 1 0,-4.5 z" />
+          <path
+             style="display:inline;fill:none;stroke:#f7bd13;stroke-width:1.79999995;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+             id="connector20pad"
+             d="m 44.936208,103.54768 a 2.25,2.25 0 0 1 0,4.5 2.25,2.25 0 1 1 0,-4.5 z" />
+          <path
+             style="display:inline;fill:none;stroke:#f7bd13;stroke-width:1.79999995;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+             id="connector12pad"
+             d="m 44.936208,67.547681 a 2.25,2.25 0 0 1 0,4.5 2.25,2.25 0 1 1 0,-4.5 z" />
+          <path
+             style="display:inline;fill:none;stroke:#f7bd13;stroke-width:1.79999995;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+             id="connector14pad"
+             d="m 44.936208,76.547681 a 2.25,2.25 0 0 1 0,4.5 2.25,2.25 0 1 1 0,-4.5 z" />
+          <path
+             style="display:inline;fill:none;stroke:#f7bd13;stroke-width:1.79999995;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+             id="connector24pad"
+             d="m 44.936208,121.54767 a 2.25,2.25 0 0 1 0,4.5 2.25,2.25 0 1 1 0,-4.5 z" />
+          <path
+             style="display:inline;fill:none;stroke:#f7bd13;stroke-width:1.79999995;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+             id="connector26pad"
+             d="m 44.936208,130.54767 a 2.25,2.25 0 0 1 0,4.5 2.25,2.25 0 1 1 0,-4.5 z" />
+          <path
+             style="display:inline;fill:none;stroke:#f7bd13;stroke-width:1.79999995;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+             id="connector22pad"
+             d="m 44.936208,112.54767 a 2.25,2.25 0 0 1 0,4.5 2.25,2.25 0 1 1 0,-4.5 z" />
+          <path
+             style="display:inline;fill:none;stroke:#f7bd13;stroke-width:1.79999995;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+             id="connector2pad"
+             d="m 44.936208,22.547678 a 2.25,2.25 0 0 1 0,4.5 2.25,2.25 0 1 1 0,-4.5 z" />
+          <path
+             style="display:inline;fill:none;stroke:#f7bd13;stroke-width:1.79999995;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+             id="connector4pad"
+             d="m 44.936208,31.547678 a 2.25,2.25 0 0 1 0,4.5 2.25,2.25 0 1 1 0,-4.5 z" />
+          <rect
+             style="display:inline;fill:none;stroke:#f7bd13;stroke-width:1.79999995;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+             id="rect4984"
+             y="25.686207"
+             x="-27.047628"
+             height="4.5"
+             width="4.5"
+             transform="matrix(0,-1,1,0,0,0)" />
+          <path
+             style="fill:none;stroke:#f7bd13;stroke-width:1.79999995;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+             id="connector1pad"
+             d="m 27.936208,22.547678 a 2.25,2.25 0 0 1 0,4.5 2.25,2.25 0 1 1 0,-4.5 z" />
+          <path
+             style="fill:none;stroke:#f7bd13;stroke-width:1.79999995;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+             id="connector3pad"
+             d="m 27.936208,31.547678 a 2.25,2.25 0 0 1 0,4.5 2.25,2.25 0 1 1 0,-4.5 z" />
+          <g
+             id="g18883"
+             transform="matrix(0,-1,1,0,-855.15398,-101.66817)">
+            <path
+               d="m -109.09647,881.5081 a 2.25,2.25 0 0 1 0,4.5 2.25,2.25 0 1 1 0,-4.5 z"
+               id="connector6pad-8"
+               style="display:inline;fill:none;stroke:#f7bd13;stroke-width:1.79999995;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+            <path
+               d="m -109.09647,890.5081 a 2.25,2.25 0 0 1 0,4.5 2.25,2.25 0 1 1 0,-4.5 z"
+               id="connector8pad-5"
+               style="display:inline;fill:none;stroke:#f7bd13;stroke-width:1.79999995;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+            <path
+               d="m -109.09647,899.5081 a 2.25,2.25 0 0 1 0,4.5 2.25,2.25 0 1 1 0,-4.5 z"
+               id="connector10pad-0"
+               style="display:inline;fill:none;stroke:#f7bd13;stroke-width:1.79999995;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+            <path
+               d="m -109.09647,908.5081 a 2.25,2.25 0 0 1 0,4.5 2.25,2.25 0 1 1 0,-4.5 z"
+               id="connector12pad-5"
+               style="display:inline;fill:none;stroke:#f7bd13;stroke-width:1.79999995;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+            <path
+               d="m -109.09647,917.5081 a 2.25,2.25 0 0 1 0,4.49998 2.25,2.25 0 1 1 0,-4.49998 z"
+               id="connector14pad-6"
+               style="display:inline;fill:none;stroke:#f7bd13;stroke-width:1.79999995;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+            <path
+               d="m -109.09647,863.5081 a 2.25,2.25 0 0 1 0,4.5 2.25,2.25 0 1 1 0,-4.5 z"
+               id="connector2pad-2"
+               style="display:inline;fill:none;stroke:#f7bd13;stroke-width:1.79999995;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+            <path
+               d="m -109.09647,872.5081 a 2.25,2.25 0 0 1 0,4.5 2.25,2.25 0 1 1 0,-4.5 z"
+               id="connector4pad-7"
+               style="display:inline;fill:none;stroke:#f7bd13;stroke-width:1.79999995;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+          </g>
+          <path
+             style="display:inline;fill:none;stroke:#f7bd13;stroke-width:1.79999995;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+             id="connector15pad-1"
+             d="m 28.284807,148.47748 a 2.25,2.25 0 0 1 0,4.5 2.25,2.25 0 1 1 0,-4.5 z" />
+          <path
+             style="display:inline;fill:none;stroke:#f7bd13;stroke-width:1.79999995;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+             id="connector17pad-8"
+             d="m 28.284807,157.47748 a 2.25,2.25 0 0 1 0,4.5 2.25,2.25 0 1 1 0,-4.5 z" />
+          <path
+             style="display:inline;fill:none;stroke:#f7bd13;stroke-width:1.79999995;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+             id="connector19pad-1"
+             d="m 28.284807,166.47748 a 2.25,2.25 0 0 1 0,4.5 2.25,2.25 0 1 1 0,-4.5 z" />
+          <path
+             style="display:inline;fill:none;stroke:#f7bd13;stroke-width:1.79999995;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+             id="connector13pad-4"
+             d="m 28.284807,139.47748 a 2.25,2.25 0 0 1 0,4.5 2.25,2.25 0 1 1 0,-4.5 z" />
+          <path
+             style="display:inline;fill:none;stroke:#f7bd13;stroke-width:1.79999995;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+             id="connector23pad-5"
+             d="m 28.284807,184.47747 a 2.25,2.25 0 0 1 0,4.5 2.25,2.25 0 1 1 0,-4.5 z" />
+          <path
+             style="display:inline;fill:none;stroke:#f7bd13;stroke-width:1.79999995;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+             id="connector25pad-6"
+             d="m 28.284807,193.47747 a 2.25,2.25 0 0 1 0,4.5 2.25,2.25 0 1 1 0,-4.5 z" />
+          <path
+             style="display:inline;fill:none;stroke:#f7bd13;stroke-width:1.79999995;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+             id="connector21pad-8"
+             d="m 28.284807,175.47747 a 2.250002,2.250002 0 0 1 0,4.5 2.250002,2.250002 0 1 1 0,-4.5 z" />
+          <path
+             style="display:inline;fill:none;stroke:#f7bd13;stroke-width:1.79999995;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+             id="connector16pad-5"
+             d="m 45.284807,148.47748 a 2.25,2.25 0 0 1 0,4.5 2.25,2.25 0 1 1 0,-4.5 z" />
+          <path
+             style="display:inline;fill:none;stroke:#f7bd13;stroke-width:1.79999995;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+             id="connector18pad-7"
+             d="m 45.284807,157.47748 a 2.25,2.25 0 0 1 0,4.5 2.25,2.25 0 1 1 0,-4.5 z" />
+          <path
+             style="display:inline;fill:none;stroke:#f7bd13;stroke-width:1.79999995;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+             id="connector20pad-0"
+             d="m 45.284807,166.47748 a 2.25,2.25 0 0 1 0,4.5 2.25,2.25 0 1 1 0,-4.5 z" />
+          <path
+             style="display:inline;fill:none;stroke:#f7bd13;stroke-width:1.79999995;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+             id="connector14pad-2"
+             d="m 45.284807,139.47748 a 2.25,2.25 0 0 1 0,4.5 2.25,2.25 0 1 1 0,-4.5 z" />
+          <path
+             style="display:inline;fill:none;stroke:#f7bd13;stroke-width:1.79999995;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+             id="connector24pad-9"
+             d="m 45.284807,184.47747 a 2.25,2.25 0 0 1 0,4.5 2.25,2.25 0 1 1 0,-4.5 z" />
+          <path
+             style="display:inline;fill:none;stroke:#f7bd13;stroke-width:1.79999995;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+             id="connector26pad-6"
+             d="m 45.284807,193.47747 a 2.25,2.25 0 0 1 0,4.5 2.25,2.25 0 1 1 0,-4.5 z" />
+          <path
+             style="display:inline;fill:none;stroke:#f7bd13;stroke-width:1.79999995;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+             id="connector22pad-3"
+             d="m 45.284807,175.47747 a 2.250002,2.250002 0 0 1 0,4.5 2.250002,2.250002 0 1 1 0,-4.5 z" />
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>
